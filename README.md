@@ -7,7 +7,7 @@
 ## 태스크 정보
 
 | Task     	| 평가 속성         | 활용데이터 	| 설명	|
-|----------	|----------------	|-----------:|----------:|
+|----------	|---------------------:|-----------:|----------:|
 | 문장유사도(KorSTS) | 임베딩품질                 	| [KorSTS](https://github.com/kakaobrain/kor-nlu-datasets/tree/master/KorSTS) | 두 문장 임베딩의 코사인 유사도와 0-5점 사이로 라벨링 된 점수 간의 상관관계를 평가 |
 | 의미검색(Semantic Search) | 임베딩품질                 	| [rlhf korean dataset](https://huggingface.co/datasets/jojo0217/korean_rlhf_dataset) | 응답후보 중 질문 문장에 대한 가장 적합한 문장을 도출.  가장 유사도가 높은 문장을 정답으로 산출 |
 | 문장 길이 분류(Length) | 표층적 속성                	| [openkorpos](https://github.com/openkorpos/openkorpos) | 어절을 기준으로 문장의 길이를 계산하여 분류 |
