@@ -3,6 +3,14 @@
 ## 개요
 한국어 문장 임베딩 품질 및 언어적 속성 평가를 위해 개발한 10가지 평가 태스크 라이브러리
 
+## Dependencies
+
+senteval라이브러리의 dependency를 따릅니다:
+
+* Python 2/3 with [NumPy](http://www.numpy.org/)/[SciPy](http://www.scipy.org/)
+* [Pytorch](http://pytorch.org/)>=0.4
+* [scikit-learn](http://scikit-learn.org/stable/index.html)>=0.18.0
+
 
 ## 태스크 정보
 
