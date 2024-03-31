@@ -31,10 +31,10 @@
 ## 사용법(colab)
 ***의미검색(semantic search)을 제외한 과제***
 
-examples폴더로 이동
+examples폴더로 이동<br>
 ```cd KoSentEval/KoSentEval/examples``` 
 
-원하는 문장임베딩 모델파일(.py)을 열어 실행하거나,
+원하는 문장임베딩 모델파일(.py)을 열어 실행하거나,<br>
 ```!python MODEL_NAME.py```
 
 huggingface내의 문장 임베딩 모델을 불러와 실행할 수 있습니다.
@@ -51,10 +51,10 @@ params_senteval['classifier'] = {'nhid': 1, 'optim': 'adam', 'batch_size': 128,
 ```
 
 ***의미검색과제***
-semantic_search 폴더로 이동
+semantic_search 폴더로 이동<br>
 ```cd semantic_search```
 
-원하는 문장임베딩 모델파일(.py)을 열어 실행하거나,
+원하는 문장임베딩 모델파일(.py)을 열어 실행하거나,<br>
 ```!python YOUR_MODEL_NAME.py```
 
 huggingface내의 문장 임베딩 모델을 불러와 실행할 수 있습니다.
