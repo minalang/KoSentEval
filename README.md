@@ -30,7 +30,7 @@
 
 ## 사용법(colab)
 ### 의미검색(semantic search)을 제외한 과제
-<br>
+
 examples폴더로 이동<br>
 ```cd KoSentEval/KoSentEval/examples``` 
 <br>
