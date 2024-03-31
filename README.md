@@ -32,17 +32,17 @@
 ### 의미검색(semantic search)을 제외한 과제
 
 examples폴더로 이동<br>
-```cd KoSentEval/KoSentEval/examples``` 
-<br>
-원하는 문장임베딩 모델파일(.py)을 열어 실행하거나,<br>
+```cd KoSentEval/KoSentEval/examples```  
+
+원하는 문장임베딩 모델파일(.py)을 열어 실행하거나,  
 ```!python MODEL_NAME.py```
-<br>
-huggingface내의 문장 임베딩 모델을 불러와 실행할 수 있습니다.
+
+huggingface내의 문장 임베딩 모델을 불러와 실행할 수 있습니다.  
 ```
 model = AutoModel.from_pretrained('YOUR_MODEL_NAME').to(device)
 tokenizer = AutoTokenizer.from_pretrained('YOUR_MODEL_NAME')
 ```
-조정가능한 파라미터의 종류는 다음과 같습니다. 아래의 예시는 본 논문의 실험에서 사용한 세팅입니다.
+조정가능한 파라미터의 종류는 다음과 같습니다. 아래의 예시는 본 논문의 실험에서 사용한 세팅입니다.  
 ```
 # Set params for SentEval
 params_senteval = {'task_path': PATH_TO_DATA, 'usepytorch': True, 'kfold': 10}
@@ -50,7 +50,7 @@ params_senteval['classifier'] = {'nhid': 1, 'optim': 'adam', 'batch_size': 128,
                                  'tenacity': 5, 'epoch_size': 5}
 ```
 
-각 파라미터의 의미는 아래와 같습니다.
+각 파라미터의 의미는 아래와 같습니다.  
 ```
 # senteval parameters
 task_path                   # path to SentEval datasets (required)
@@ -58,7 +58,7 @@ seed                        # seed
 usepytorch                  # use cuda-pytorch (else scikit-learn) where possible
 kfold                       # k-fold validation for MR/CR/SUB/MPQA.
 ```
-classifier에 대한 파라미터:
+classifier에 대한 파라미터:  
 ```
 nhid:                       # number of hidden units (0: Logistic Regression, >0: MLP); Default nonlinearity: Tanh
 optim:                      # optimizer ("sgd,lr=0.1", "adam", "rmsprop" ..)
@@ -69,13 +69,13 @@ dropout:                    # dropout for MLP
 ```
 
 ### 의미검색과제
-semantic_search 폴더로 이동<br>
+semantic_search 폴더로 이동  
 ```cd semantic_search```
-<br>
-원하는 문장임베딩 모델파일(.py)을 열어 실행하거나,<br>
+
+원하는 문장임베딩 모델파일(.py)을 열어 실행하거나,  
 ```!python YOUR_MODEL_NAME.py```
-<br>
-huggingface내의 문장 임베딩 모델을 불러와 실행할 수 있습니다.
+
+huggingface내의 문장 임베딩 모델을 불러와 실행할 수 있습니다.  
 ```
 model = AutoModel.from_pretrained('YOUR_MODEL_NAME').to(device)
 tokenizer = AutoTokenizer.from_pretrained('YOUR_MODEL_NAME')
