@@ -29,14 +29,14 @@
 | 경어법분류(Honorifics) | 의미적 속성                	| [StyleKQC](https://github.com/cynthia/stylekqc)+[paraKQC](https://github.com/warnikchow/paraKQC)+[smile style dataset](https://github.com/smilegate-ai/korean_smile_style_dataset)| 존댓말, 반말 문장 분류 |
 
 ## 사용법(colab)
-***의미검색(semantic search)을 제외한 과제***
-
+### 의미검색(semantic search)을 제외한 과제
+<br>
 examples폴더로 이동<br>
 ```cd KoSentEval/KoSentEval/examples``` 
-
+<br>
 원하는 문장임베딩 모델파일(.py)을 열어 실행하거나,<br>
 ```!python MODEL_NAME.py```
-
+<br>
 huggingface내의 문장 임베딩 모델을 불러와 실행할 수 있습니다.
 ```
 model = AutoModel.from_pretrained('YOUR_MODEL_NAME').to(device)
@@ -50,13 +50,13 @@ params_senteval['classifier'] = {'nhid': 1, 'optim': 'adam', 'batch_size': 128,
                                  'tenacity': 5, 'epoch_size': 5}
 ```
 
-***의미검색과제***
+### 의미검색과제
 semantic_search 폴더로 이동<br>
 ```cd semantic_search```
-
+<br>
 원하는 문장임베딩 모델파일(.py)을 열어 실행하거나,<br>
 ```!python YOUR_MODEL_NAME.py```
-
+<br>
 huggingface내의 문장 임베딩 모델을 불러와 실행할 수 있습니다.
 ```
 model = AutoModel.from_pretrained('YOUR_MODEL_NAME').to(device)
