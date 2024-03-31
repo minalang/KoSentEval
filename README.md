@@ -5,7 +5,7 @@
 
 ## Dependencies
 
-senteval라이브러리의 dependency를 따릅니다:
+[senteval](https://github.com/facebookresearch/SentEval)라이브러리의 체계와 dependency를 따릅니다:
 
 * Python 2/3 with [NumPy](http://www.numpy.org/)/[SciPy](http://www.scipy.org/)
 * [Pytorch](http://pytorch.org/)>=0.4
