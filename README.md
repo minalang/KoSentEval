@@ -50,6 +50,24 @@ params_senteval['classifier'] = {'nhid': 1, 'optim': 'adam', 'batch_size': 128,
                                  'tenacity': 5, 'epoch_size': 5}
 ```
 
+각 파라미터의 의미는 아래와 같습니다.
+```
+# senteval parameters
+task_path                   # path to SentEval datasets (required)
+seed                        # seed
+usepytorch                  # use cuda-pytorch (else scikit-learn) where possible
+kfold                       # k-fold validation for MR/CR/SUB/MPQA.
+```
+classifier에 대한 파라미터:
+```
+nhid:                       # number of hidden units (0: Logistic Regression, >0: MLP); Default nonlinearity: Tanh
+optim:                      # optimizer ("sgd,lr=0.1", "adam", "rmsprop" ..)
+tenacity:                   # how many times dev acc does not increase before training stops
+epoch_size:                 # each epoch corresponds to epoch_size pass on the train set
+max_epoch:                  # max number of epoches
+dropout:                    # dropout for MLP
+```
+
 ### 의미검색과제
 semantic_search 폴더로 이동<br>
 ```cd semantic_search```
