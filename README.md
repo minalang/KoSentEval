@@ -2,7 +2,8 @@
 
 ## 개요
 한국어 문장 임베딩 품질 및 언어적 속성 평가를 위해 개발한 10가지 평가 태스크 라이브러리.
-
+지능정보연구 제30권 제1호에 개제되었습니다:)
+[KCI 공홈](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003066128), [PDF 파일 다운로드](https://jiisonline.org/files/DLA/20240331160929_10.%EC%A0%95%EB%AF%BC%ED%99%94.pdf)
 
 ## Dependencies
 
@@ -81,4 +82,16 @@ model = AutoModel.from_pretrained('YOUR_MODEL_NAME').to(device)
 tokenizer = AutoTokenizer.from_pretrained('YOUR_MODEL_NAME')
 ```
 
-
+## 인용
+```
+@article{ART003066128,
+author={정민화 and 송민},
+title={KoSentEval: 한국어 문장 임베딩 평가 연구},
+journal={지능정보연구},
+issn={2288-4866},
+year={2024},
+volume={30},
+number={1},
+pages={179-199}
+}
+```
