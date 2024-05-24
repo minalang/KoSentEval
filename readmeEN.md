@@ -31,7 +31,7 @@ It follows dependency of [senteval](https://github.com/facebookresearch/SentEval
 | Honorifics |semantic feature                	| [StyleKQC](https://github.com/cynthia/stylekqc)+[paraKQC](https://github.com/warnikchow/paraKQC)+[smile style dataset](https://github.com/smilegate-ai/korean_smile_style_dataset)| Classification of honorifics and informal sentences |
 
 ## Getting start with Colab
-### Tasks except semantic search
+### Tasks except Semantic Search
 
 Move to examples folder<br>
 ```cd KoSentEval/KoSentEval/examples```  
@@ -52,7 +52,7 @@ params_senteval['classifier'] = {'nhid': 1, 'optim': 'adam', 'batch_size': 128,
                                  'tenacity': 5, 'epoch_size': 5}
 ```
 
-Explanation is in below:  
+Explanation of parameters is in below:  
 ```
 # senteval parameters
 task_path                   # path to SentEval datasets (required)
