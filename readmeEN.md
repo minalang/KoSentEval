@@ -1,14 +1,14 @@
 # KoSentEval: A Study of Korean Sentence Embedding Evaluation
 
-This repository contains code for out our paper
-[KoSentEval:A Study of Korean Sentence Embedding Evaluation](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003066128)
-[PDF](https://jiisonline.org/files/DLA/20240331160929_10.%EC%A0%95%EB%AF%BC%ED%99%94.pdf)
+This repository contains code for out our paper<br>
+[KoSentEval:A Study of Korean Sentence Embedding Evaluation](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003066128), 
+[PDF](https://jiisonline.org/files/DLA/20240331160929_10.%EC%A0%95%EB%AF%BC%ED%99%94.pdf)<br>
 KoSentEval is a library for evaluating the quality of Korean sentence embeddings. It is motivated by [SentEval](https://github.com/facebookresearch/SentEval), but tried to capture linguistic features of Korean such as subject ommision and honorifics.
 KoSentEval currently includes 2 downsteam tasks and 8 probing tasks.
 
 ## Dependencies
 
-[senteval](https://github.com/facebookresearch/SentEval)라이브러리의 체계와 dependency를 따릅니다:
+It follows dependency of [senteval](https://github.com/facebookresearch/SentEval):
 
 * Python 2/3 with [NumPy](http://www.numpy.org/)/[SciPy](http://www.scipy.org/)
 * [Pytorch](http://pytorch.org/)>=0.4
@@ -33,18 +33,18 @@ KoSentEval currently includes 2 downsteam tasks and 8 probing tasks.
 ## Getting start with Colab
 ### Tasks except semantic search
 
-examples폴더로 이동<br>
+Move to examples folder<br>
 ```cd KoSentEval/KoSentEval/examples```  
 
-원하는 문장임베딩 모델파일(.py)을 열어 실행하거나,  
+You can either select models in example file(.py),
 ```!python MODEL_NAME.py```
 
-huggingface내의 문장 임베딩 모델을 불러와 실행할 수 있습니다.  
+Or type model in huggingface  
 ```
 model = AutoModel.from_pretrained('YOUR_MODEL_NAME').to(device)
 tokenizer = AutoTokenizer.from_pretrained('YOUR_MODEL_NAME')
 ```
-조정가능한 파라미터의 종류는 다음과 같습니다. 아래의 예시는 본 논문의 실험에서 사용한 세팅입니다.  
+This is controllable parameters in this library. Example below is setting used in this paper:
 ```
 # Set params for SentEval
 params_senteval = {'task_path': PATH_TO_DATA, 'usepytorch': True, 'kfold': 10}
@@ -52,7 +52,7 @@ params_senteval['classifier'] = {'nhid': 1, 'optim': 'adam', 'batch_size': 128,
                                  'tenacity': 5, 'epoch_size': 5}
 ```
 
-각 파라미터의 의미는 아래와 같습니다.  
+Explanation is in below:  
 ```
 # senteval parameters
 task_path                   # path to SentEval datasets (required)
@@ -60,7 +60,7 @@ seed                        # seed
 usepytorch                  # use cuda-pytorch (else scikit-learn) where possible
 kfold                       # k-fold validation for MR/CR/SUB/MPQA.
 ```
-classifier에 대한 파라미터:  
+Parameters of classifier:  
 ```
 nhid:                       # number of hidden units (0: Logistic Regression, >0: MLP); Default nonlinearity: Tanh
 optim:                      # optimizer ("sgd,lr=0.1", "adam", "rmsprop" ..)
@@ -70,14 +70,14 @@ max_epoch:                  # max number of epoches
 dropout:                    # dropout for MLP
 ```
 
-### 의미검색과제
-semantic_search 폴더로 이동  
+### Semantic Search
+move to ```semantic_search``` folder  
 ```cd semantic_search```
 
-원하는 문장임베딩 모델파일(.py)을 열어 실행하거나,  
+You can either select models in example file(.py), 
 ```!python YOUR_MODEL_NAME.py```
 
-huggingface내의 문장 임베딩 모델을 불러와 실행할 수 있습니다.  
+Or type model in huggingface 
 ```
 model = AutoModel.from_pretrained('YOUR_MODEL_NAME').to(device)
 tokenizer = AutoTokenizer.from_pretrained('YOUR_MODEL_NAME')
