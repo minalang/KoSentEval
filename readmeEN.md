@@ -3,7 +3,7 @@
 This repository contains code for out our paper<br>
 [KoSentEval:A Study of Korean Sentence Embedding Evaluation](https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003066128), 
 [PDF](https://jiisonline.org/files/DLA/20240331160929_10.%EC%A0%95%EB%AF%BC%ED%99%94.pdf)<br>
-KoSentEval is a library for evaluating the quality of Korean sentence embeddings. It is motivated by [SentEval](https://github.com/facebookresearch/SentEval), but tried to capture linguistic features of Korean such as subject ommision and honorifics.
+KoSentEval is a library for evaluating the quality of Korean sentence embeddings. It is motivated by [SentEval](https://github.com/facebookresearch/SentEval), but tried to capture linguistic features of Korean such as subject omission and honorifics.
 KoSentEval currently includes 2 downsteam tasks and 8 probing tasks.
 
 ## Dependencies
@@ -19,16 +19,16 @@ It follows dependency of [senteval](https://github.com/facebookresearch/SentEval
 
 | Task         	| Evaluation Feature            | Data 	| Explanation	|
 |:------------:|:---------------------:|:-----------:|:----------|
-| Sentence Similarity(KorSTS) | Quality of Sentence                 	| [KorSTS](https://github.com/kakaobrain/kor-nlu-datasets/tree/master/KorSTS) | 두 문장 임베딩의 코사인 유사도와 0-5점 사이로 라벨링 된 점수 간의 상관관계를 평가 |
-| Semantic Search | conv AI                 	| [rlhf korean dataset](https://huggingface.co/datasets/jojo0217/korean_rlhf_dataset) | 응답후보 중 질문 문장에 대한 가장 적합한 문장을 도출.  가장 유사도가 높은 문장을 정답으로 산출 |
-| Length | Surface Feature                	| [openkorpos](https://github.com/openkorpos/openkorpos) | 어절을 기준으로 문장의 길이를 계산하여 분류 |
-| Word Content | Surface Feature                	| [openkorpos](https://github.com/openkorpos/openkorpos) | 데이터의 중빈도 어휘 목록 1000개를 선정하여 주어진 문장을 어휘에 따라 분류 |
-| SubjOmission | Syntactic Feature                	| [KLUE-DP](https://klue-benchmark.com/tasks/71/overview/description) | 문장의 주어 유무 판별 |
-| Predicate | Syntactic Feature                	| [KLUE-DP](https://klue-benchmark.com/tasks/71/overview/description) | 루트 노드의 하위 노드인 서술어의 논항이 되는 문장 구성성분 예측 |
-| Tense | Semantic Feature                	| [openkorpos](https://github.com/openkorpos/openkorpos) | 문장의 시제(과거, 비과거) 분류 |
-| Sentiment | semantic feature                	| [NSMC](https://github.com/e9t/nsmc) | 문장의 극성(부정, 긍정) 분류 |
-| SentType | semantic feature                	| [StyleKQC](https://github.com/cynthia/stylekqc)+[paraKQC](https://github.com/warnikchow/paraKQC)| 문장의 유형(선택의문문,  설명의문문, 요구, 금지) 분류 |
-| Honorifics |semantic feature                	| [StyleKQC](https://github.com/cynthia/stylekqc)+[paraKQC](https://github.com/warnikchow/paraKQC)+[smile style dataset](https://github.com/smilegate-ai/korean_smile_style_dataset)| 존댓말, 반말 문장 분류 |
+| Sentence Similarity(KorSTS) | Quality of Sentence                 	| [KorSTS](https://github.com/kakaobrain/kor-nlu-datasets/tree/master/KorSTS) | Evaluate the correlation between cosine similarity of two-sentence embedding and scores labeled between 0-5 |
+| Semantic Search | conv AI                 	| [rlhf korean dataset](https://huggingface.co/datasets/jojo0217/korean_rlhf_dataset) | Derive the most appropriate sentence for the question sentence among the answer candidates. The most similar sentence is calculated as the correct answer. |
+| Length | Surface Feature                	| [openkorpos](https://github.com/openkorpos/openkorpos) | Classify sentences based on their length |
+| Word Content | Surface Feature                	| [openkorpos](https://github.com/openkorpos/openkorpos) | Select 1000 medium frequency vocabulary lists of data and classify given sentences according to vocabulary |
+| SubjOmission | Syntactic Feature                	| [KLUE-DP](https://klue-benchmark.com/tasks/71/overview/description) | Determine the presence or absence of a subject in a sentence |
+| Predicate | Syntactic Feature                	| [KLUE-DP](https://klue-benchmark.com/tasks/71/overview/description) | Prediction of Sentence Components for Descriptors Sub-Nodes of Root Nodes |
+| Tense | Semantic Feature                	| [openkorpos](https://github.com/openkorpos/openkorpos) | Classification of tenses (past and non-past) in sentences |
+| Sentiment | semantic feature                	| [NSMC](https://github.com/e9t/nsmc) | Polarity (negative, positive) classification of sentences |
+| SentType | semantic feature                	| [StyleKQC](https://github.com/cynthia/stylekqc)+[paraKQC](https://github.com/warnikchow/paraKQC)| Classification of sentence types (optional questions, explanatory questions, requests, prohibitions) |
+| Honorifics |semantic feature                	| [StyleKQC](https://github.com/cynthia/stylekqc)+[paraKQC](https://github.com/warnikchow/paraKQC)+[smile style dataset](https://github.com/smilegate-ai/korean_smile_style_dataset)| Classification of honorifics and informal sentences |
 
 ## Getting start with Colab
 ### Tasks except semantic search
